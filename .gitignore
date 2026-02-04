@@ -8,6 +8,7 @@ web/app/mu-plugins/*/
 !web/app/mu-plugins/farlo-*
 !web/app/mu-plugins/farlo-ui-webp-converter/
 !web/app/mu-plugins/acf-scheduled-update/
+!web/app/mu-plugins/olt-shows-importer/
 web/app/languages/themes/twentytwenty
 web/app/languages/themes/twentytwenty*
 web/app/upgrade
