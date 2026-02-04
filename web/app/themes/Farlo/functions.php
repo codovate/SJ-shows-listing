@@ -5,6 +5,8 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/custom-post-types.php';
+
 add_action('wp_enqueue_scripts', function (): void {
     $theme_uri  = get_stylesheet_directory_uri();
     $theme_path = get_stylesheet_directory();
