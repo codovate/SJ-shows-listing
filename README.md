@@ -247,3 +247,49 @@ rm -rf node_modules
 npm install
 npm run build
 ```
+
+---
+
+## What I'd Do Next (Production Readiness)
+
+If this was going live, here's what I'd prioritise:
+
+### Performance
+
+- **Object caching** - Add Redis/Memcached for persistent object caching. DDEV supports this out of the box.
+- **Page caching** - Implement full-page caching (WP Super Cache, W3 Total Cache, or nginx fastcgi_cache).
+- **Image CDN** - Serve images via Cloudflare or imgix for automatic resizing and WebP conversion.
+- **Lazy loading** - Add native `loading="lazy"` to archive grid images (only above-fold images should eager load).
+
+### Caching Strategy
+
+- **API response caching** - Cache OLT API responses in a transient (e.g., 1 hour TTL) to reduce external API calls during imports.
+- **Fragment caching** - Cache the shows grid output as a transient, bust on post save/delete hooks.
+- **HTTP caching headers** - Set appropriate `Cache-Control` headers for static assets and archive pages.
+
+### Monitoring & Observability
+
+- **Error tracking** - Integrate Sentry or Bugsnag for PHP error monitoring.
+- **Uptime monitoring** - Set up Pingdom, UptimeRobot, or similar.
+- **Import logging** - Log imports to a dedicated table with timestamps, counts, and failures for audit trail.
+- **Health check endpoint** - Add a simple `/health` endpoint that verifies DB connection and returns 200.
+
+### Security
+
+- **Environment variables** - Move any API keys to `.env` (already using Bedrock, so this is straightforward).
+- **Rate limiting** - Add rate limiting to prevent abuse if exposing any custom endpoints.
+- **Security headers** - Add CSP, X-Frame-Options, X-Content-Type-Options via nginx or a plugin.
+- **Regular updates** - Set up Dependabot or similar for dependency monitoring.
+
+### Infrastructure
+
+- **Automated imports** - Move from manual WP-CLI to a proper cron job or scheduled Action Scheduler task.
+- **Staging environment** - Set up a staging site with production data sync for testing.
+- **CI/CD pipeline** - GitHub Actions to run linting, build assets, and deploy on merge to main.
+- **Database backups** - Automated daily backups with offsite storage (S3, etc.).
+
+### Code Quality
+
+- **Automated testing** - Add PHPUnit tests for the importer, especially the field mapper.
+- **Code standards** - Run PHPCS with WordPress coding standards in CI.
+- **Type safety** - Add PHPStan or Psalm for static analysis.
