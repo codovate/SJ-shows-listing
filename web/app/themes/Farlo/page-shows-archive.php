@@ -64,6 +64,9 @@ $shows = new WP_Query($args);
                 ?>
 
                 <article class="show-card">
+                    <a href="<?php the_permalink(); ?>" class="show-card__link">
+                        <span class="screen-reader-text"><?php the_title(); ?></span>
+                    </a>
                     <div class="show-card__image">
                         <?php if (has_post_thumbnail()) : ?>
                             <?php the_post_thumbnail('medium_large'); ?>
