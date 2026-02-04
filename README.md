@@ -58,7 +58,7 @@ ddev wp plugin activate olt-shows-importer
 5. Upload: `web/app/themes/Farlo/acf-json/acf-export-2026-02-04.json`
 6. Click **Import JSON**
 
-This creates the "Shows" custom post type and custom fields.
+This creates the custom fields for the "Shows" post type. The post type itself is registered via PHP in the theme.
 
 ### 5. Build Theme Assets
 
@@ -145,11 +145,13 @@ SJ-shows-listing/
 │   │           └── class-show-importer.php
 │   └── themes/
 │       └── Farlo/                        # Theme
+│           ├── functions.php             # Theme setup & includes
+│           ├── custom-post-types.php     # Shows CPT registration
 │           ├── page-shows-archive.php    # Shows grid template
 │           ├── single-show.php           # Single show template
-│           └── src/assets/scss/
-│           └── acf-json/acf-export-2026-02-04.json        # ACF configuration
-|
+│           ├── src/assets/scss/          # SCSS source files
+│           └── acf-json/                 # ACF field configuration
+│
 └── README.md
 ```
 
@@ -177,11 +179,13 @@ SJ-shows-listing/
 
 1. **ACF Free is sufficient** - No ACF Pro features required for the custom fields.
 
-2. **Date storage format** - Dates stored as `d/m/Y` (e.g., "03/03/2026") to match ACF date picker. Display format converted in templates.
+2. **Hardcoded post type** - The "Shows" custom post type is registered via PHP in `custom-post-types.php` rather than ACF, ensuring it's always available regardless of ACF configuration.
 
-3. **Single booking URL on cards** - While all URLs are stored, only the first displays on archive cards. Single show pages could show all.
+3. **Date storage format** - Dates stored as `d/m/Y` (e.g., "03/03/2026") to match ACF date picker. Display format converted in templates.
 
-4. **Local image storage** - Images are sideloaded (downloaded locally) rather than hotlinked, ensuring availability if source changes.
+4. **Single booking URL on cards** - While all URLs are stored, only the first displays on archive cards. Single show pages could show all.
+
+5. **Local image storage** - Images are sideloaded (downloaded locally) rather than hotlinked, ensuring availability if source changes.
 
 ### Trade-offs
 
