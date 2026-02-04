@@ -58,7 +58,8 @@
     "joostvanveen/litespeedcache": "*",
     "rosell-dk/webp-convert": "*",
     "guzzlehttp/guzzle": "*",
-    "ffraenz/private-composer-installer": "*"
+    "ffraenz/private-composer-installer": "*",
+    "wpackagist-plugin/advanced-custom-fields" : "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "*",

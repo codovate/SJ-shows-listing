@@ -1,0 +1,218 @@
+[
+    {
+        "key": "group_6982a4460f2d8",
+        "title": "Shows Field Group",
+        "fields": [
+            {
+                "key": "field_6982b37c6a4e1",
+                "label": "Show ID",
+                "name": "olt_show_id",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "20",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6982a4469e9de",
+                "label": "Start Date",
+                "name": "show_opening_night",
+                "aria-label": "",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "40",
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "d\/m\/Y",
+                "return_format": "j M Y",
+                "first_day": 1,
+                "default_to_current_date": 0,
+                "allow_in_bindings": 0
+            },
+            {
+                "key": "field_6982a6714395a",
+                "label": "End Date",
+                "name": "end_date",
+                "aria-label": "",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "40",
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "d\/m\/Y",
+                "return_format": "j M Y",
+                "first_day": 1,
+                "default_to_current_date": 0,
+                "allow_in_bindings": 0
+            },
+            {
+                "key": "field_6982a6c4fb216",
+                "label": "Booking Link(s)",
+                "name": "show_ticket_urls",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "70",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "rows": "",
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_6982ab7ba05f5",
+                "label": "Minimum Price",
+                "name": "minimum_price",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "30",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "show"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "display_title": ""
+    },
+    {
+        "key": "post_type_6982a2726b9ba",
+        "title": "Shows",
+        "menu_order": 0,
+        "active": true,
+        "post_type": "show",
+        "advanced_configuration": true,
+        "import_source": "",
+        "import_date": "",
+        "labels": {
+            "name": "Shows",
+            "singular_name": "Show",
+            "menu_name": "Shows",
+            "all_items": "All Shows",
+            "edit_item": "Edit Show",
+            "view_item": "View Show",
+            "view_items": "View Shows",
+            "add_new_item": "Add New Show",
+            "add_new": "Add New Show",
+            "new_item": "New Show",
+            "parent_item_colon": "Parent Show:",
+            "search_items": "Search Shows",
+            "not_found": "No shows found",
+            "not_found_in_trash": "No shows found in the bin",
+            "archives": "Show Archives",
+            "attributes": "Show Attributes",
+            "featured_image": "Featured Image",
+            "set_featured_image": "Set Featured Image",
+            "remove_featured_image": "Remove featured image",
+            "use_featured_image": "",
+            "insert_into_item": "Insert into show",
+            "uploaded_to_this_item": "Uploaded to this show",
+            "filter_items_list": "Filter shows list",
+            "filter_by_date": "Filter shows by date",
+            "items_list_navigation": "Shows list navigation",
+            "items_list": "Shows list",
+            "item_published": "Show published.",
+            "item_published_privately": "Show published privately.",
+            "item_reverted_to_draft": "Show reverted to draft.",
+            "item_scheduled": "Show scheduled.",
+            "item_updated": "Show updated.",
+            "item_link": "Show Link",
+            "item_link_description": "A link to a show."
+        },
+        "description": "Shows is a post type for live performances and events. All data is imported automatically and should not be edited manually unless required.",
+        "public": true,
+        "hierarchical": false,
+        "exclude_from_search": false,
+        "publicly_queryable": true,
+        "show_ui": true,
+        "show_in_menu": true,
+        "admin_menu_parent": "",
+        "show_in_admin_bar": true,
+        "show_in_nav_menus": true,
+        "show_in_rest": true,
+        "rest_base": "",
+        "rest_namespace": "wp\/v2",
+        "rest_controller_class": "WP_REST_Posts_Controller",
+        "menu_position": "",
+        "menu_icon": {
+            "type": "dashicons",
+            "value": "dashicons-tickets-alt"
+        },
+        "rename_capabilities": false,
+        "singular_capability_name": "post",
+        "plural_capability_name": "posts",
+        "supports": [
+            "title",
+            "editor",
+            "thumbnail",
+            "custom-fields"
+        ],
+        "taxonomies": "",
+        "has_archive": false,
+        "has_archive_slug": "",
+        "rewrite": {
+            "permalink_rewrite": "post_type_key",
+            "with_front": "1",
+            "feeds": "0",
+            "pages": "1"
+        },
+        "query_var": "post_type_key",
+        "query_var_name": "",
+        "can_export": true,
+        "delete_with_user": false,
+        "register_meta_box_cb": "",
+        "enter_title_here": ""
+    }
+]
