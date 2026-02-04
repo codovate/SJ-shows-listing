@@ -1,0 +1,52 @@
+# Application
+web/app/plugins
+web/app/plugins/*
+web/app/plugins/*/
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*
+web/app/mu-plugins/*/
+!web/app/mu-plugins/farlo-*
+!web/app/mu-plugins/farlo-ui-webp-converter/
+!web/app/mu-plugins/acf-scheduled-update/
+web/app/languages/themes/twentytwenty
+web/app/languages/themes/twentytwenty*
+web/app/upgrade
+web/app/cache
+web/app/cache/wpo-cache
+web/app/wpo-cache
+web/app/advanced-cache
+web/app/uploads
+!web/app/uploads/.gitkeep
+web/app/themes/twentytwenty*
+
+# WordPress
+web/wp
+web/wp-content/uploads
+
+.vscode
+auth.json
+composer.lock
+README 2.md
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Dotenv
+.env
+.env.*
+!.env.example
+
+# Composer
+/vendor
+
+# WP-CLI
+wp-cli.local.yml
+
+!.htaccess

@@ -1,0 +1,114 @@
+{
+  "name": "farlo/theme",
+  "type": "project",
+  "license": "MIT",
+  "description": "WordPress boilerplate for Farlo projects.",
+  "homepage": "https://farlo.co.uk",
+  "authors": [
+    {
+      "name": "Ben Campbell",
+      "email": "ben@farlo.co.uk",
+      "homepage": "https://github.com/ukds"
+    },
+    {
+      "name": "Tom Dale",
+      "email": "tom@farlo.co.uk",
+      "homepage": "https://github.com/mrtdale"
+    },
+    {
+      "name": "Kieran Karn",
+      "email": "kieran@farlo.co.uk",
+      "homepage": "https://github.com/kierankarn"
+    },
+    {
+      "name": "Toni Kennedy-Smith",
+      "email": "toni@farlo.co.uk",
+      "homepage": "https://github.com/TTa90"
+    }
+  ],
+  "keywords": [
+    "farlo",
+    "composer",
+    "wordpress",
+    "wp",
+    "wp-config"
+  ],
+  "support": {
+    "issues": "https://github.com/FarloGroup/FarloBoilerplate/issues"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
+    }
+  ],
+  "require": {
+    "php": ">= 8.2",
+    "composer/installers": "*",
+    "vlucas/phpdotenv": "*",
+    "oscarotero/env": "*",
+    "roots/bedrock-autoloader": "*",
+    "roots/bedrock-disallow-indexing": "*",
+    "roots/wordpress": "*",
+    "roots/wp-config": "*",
+    "joostvanveen/litespeedcache": "*",
+    "rosell-dk/webp-convert": "*",
+    "guzzlehttp/guzzle": "*",
+    "ffraenz/private-composer-installer": "*"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "*",
+    "roave/security-advisories": "dev-latest"
+  },
+  "config": {
+    "platform-check": false,
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "process-timeout": 600,
+    "allow-plugins": {
+      "composer/installers": true,
+      "ffraenz/private-composer-installer": true,
+      "roots/wordpress-core-installer": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "wordpress-install-dir": "web/wp"
+  },
+  "scripts": {
+    "pre-install-cmd": [
+      "[ -f .env ] || cp .env.example .env"
+    ],
+    "pre-update-cmd": [
+      "[ -f .env ] || cp .env.example .env"
+    ],
+    "post-update-cmd": [
+      "composer run remove-old-wp-themes"
+    ],
+    "post-install-cmd": [
+      "composer run remove-old-wp-themes"
+    ],
+    "remove-old-wp-themes": [
+      "rm -rf web/wp/wp-content/themes/twenty*"
+    ],
+    "test": [
+      "phpcs"
+    ]
+  }
+}

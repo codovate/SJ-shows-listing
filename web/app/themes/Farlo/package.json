@@ -1,0 +1,22 @@
+{
+  "name": "farlo-theme",
+  "version": "1.0.0",
+  "description": "Farlo WordPress theme build tools",
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "dev": "gulp watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^7.0.0",
+    "gulp": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^9.2.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.77.0"
+  }
+}
