@@ -43,12 +43,18 @@ function scripts() {
 }
 
 function images() {
-    return gulp.src(paths.images.src)
-        .pipe(imagemin({
-            optimizationLevel: 3,
-            progressive: false,
-            interlaced: false
-        }))
+    return gulp.src(paths.images.src, { allowEmpty: true, encoding: false })
+        .pipe(imagemin([
+            imagemin.gifsicle({ interlaced: true }),
+            imagemin.mozjpeg({ quality: 80, progressive: true }),
+            imagemin.optipng({ optimizationLevel: 5 }),
+            imagemin.svgo({
+                plugins: [
+                    { name: 'removeViewBox', active: false },
+                    { name: 'cleanupIDs', active: false }
+                ]
+            })
+        ], { verbose: true }))
         .pipe(gulp.dest(paths.images.dest));
 }
 
